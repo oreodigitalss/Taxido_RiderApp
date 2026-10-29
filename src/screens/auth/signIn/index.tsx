@@ -41,6 +41,7 @@ export function SignIn() {
   const isFocused = useIsFocused();
   const [loadingAuth, setLoadingAuth] = useState(false);
   const [loadingGoogle, setLoadingGoogle] = useState(false);
+  const [googleError, setGoogleError] = useState('');
   const [error, setError] = useState('');
   const [showLoader, setShowLoader] = useState(false);
   const { currentLatitude, currentLongitude } = useSmartLocation();
@@ -105,6 +106,7 @@ export function SignIn() {
   const signIn = async () => {
     if (loadingGoogle) return;
     setLoadingGoogle(true);
+    setGoogleError('');
 
     try {
       await GoogleSignin.hasPlayServices();
@@ -116,7 +118,9 @@ export function SignIn() {
 
       const { idToken, user } = response.data;
       if (!idToken || !user.email?.trim()) {
-        notificationHelper('', 'Google did not return a valid identity token and email. Please try again.', 'error');
+        const message = 'Google did not return a valid identity token and email. Please try again.';
+        setGoogleError(message);
+        notificationHelper('', message, 'error');
         return;
       }
 
@@ -141,9 +145,14 @@ export function SignIn() {
         typeof result.access_token !== 'string' ||
         !result.access_token.trim()
       ) {
+        const message = authErrorMessage(
+          result,
+          'Google sign-in could not be completed. Please try again.',
+        );
+        setGoogleError(message);
         notificationHelper(
           '',
-          authErrorMessage(result, 'Google sign-in could not be completed. Please try again.'),
+          message,
           'error',
         );
         return;
@@ -157,6 +166,7 @@ export function SignIn() {
       const message = isErrorWithCode(error) && error.code === statusCodes.SIGN_IN_CANCELLED
         ? 'Google sign-in was cancelled.'
         : authErrorMessage(error, 'Google sign-in failed. Please try again.');
+      setGoogleError(message);
       notificationHelper('', message, 'error');
     } finally {
       setLoadingGoogle(false);
@@ -413,6 +423,11 @@ export function SignIn() {
                 </TouchableOpacity>
               )}
             </View>
+            {googleError ? (
+              <Text accessibilityRole="alert" style={styles.googleError}>
+                {googleError}
+              </Text>
+            ) : null}
 
             <TouchableOpacity
               activeOpacity={0.7}

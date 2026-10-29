@@ -69,6 +69,12 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     marginTop: windowHeight(10),
   },
+  googleError: {
+    color: appColors.alertRed,
+    fontSize: fontSizes.FONT14,
+    marginTop: windowHeight(8),
+    textAlign: "center",
+  },
   socialView: {
     alignItems: "center",
     justifyContent: "center",

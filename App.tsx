@@ -47,8 +47,12 @@ const AppContent = () => {
 
 function App(): React.JSX.Element {
   React.useEffect(() => {
-    NotificationHelper.configure();
-    requestUserPermission();
+    NotificationHelper.configure().catch(error => {
+      console.warn("Notification setup is unavailable:", error);
+    });
+    requestUserPermission().catch(error => {
+      console.warn("Notification permission setup is unavailable:", error);
+    });
     const unsubscribe = NotificationServices();
     return () => unsubscribe();
   }, []);

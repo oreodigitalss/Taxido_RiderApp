@@ -14,8 +14,11 @@ if (fs.existsSync(file)) {
                 fs.mkdirSync(dir, { recursive: true });
             }
             const cmakeFile = path.join(dir, 'CMakeLists.txt');
-            if (!fs.existsSync(cmakeFile)) {
-                fs.writeFileSync(cmakeFile, `cmake_minimum_required(VERSION 3.13)\nif(NOT TARGET react_codegen_${name})\n  add_library(react_codegen_${name} INTERFACE)\nendif()\n`);
+            const libTarget = `react_codegen_${name}`;
+            const existing = fs.existsSync(cmakeFile) ? fs.readFileSync(cmakeFile, 'utf8') : '';
+            if (!fs.existsSync(cmakeFile) || existing.includes(`add_library(${libTarget} INTERFACE)`)) {
+                fs.writeFileSync(path.join(dir, 'react_codegen_placeholder.cpp'), '// Placeholder for a library without generated JNI code.\n');
+                fs.writeFileSync(cmakeFile, `cmake_minimum_required(VERSION 3.13)\nif(NOT TARGET ${libTarget})\n  add_library(${libTarget} STATIC react_codegen_placeholder.cpp)\nendif()\n`);
             }
         }
     }

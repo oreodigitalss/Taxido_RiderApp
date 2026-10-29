@@ -57,6 +57,25 @@ test('successful coupon request preserves coupons and records success status', (
   assert.equal(state.statusCode, 200);
 });
 
+test('startup shows the rider settings error returned by a rejected request', () => {
+  const { formatStartupError } = loadSource('src/utils/startupError.ts', {});
+  assert.equal(
+    formatStartupError({ message: 'Unable to reach rider settings.' }),
+    'Unable to reach rider settings.',
+  );
+});
+
+test('Google sign-in displays the identity error returned by the API', () => {
+  const { authErrorMessage } = loadSource('src/utils/authErrorMessage.ts', {});
+  assert.equal(
+    authErrorMessage(
+      { message: 'Google identity token is invalid.', success: false },
+      'Google sign-in failed.',
+    ),
+    'Google identity token is invalid.',
+  );
+});
+
 test('clearing an expired token preserves saved preferences; full logout can clear all storage', async () => {
   const values = new Map([['token', 'expired'], ['selectedLanguage', 'hi']]);
   const storage = {

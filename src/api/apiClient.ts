@@ -67,9 +67,12 @@ api.interceptors.request.use(
       }
 
       const callTime = new Date().toLocaleTimeString();
+      const requestData = config.url?.includes("social/login")
+        ? "[redacted]"
+        : config.data;
       console.log(`[API #${++apiCallCount}] [${callTime}] ${config.method?.toUpperCase()} ${config.url}`, {
         params: config.params,
-        data: config.data,
+        data: requestData,
       });
 
       return config;

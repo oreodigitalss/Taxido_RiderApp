@@ -4,13 +4,15 @@ import { styles } from './styles';
 import Images from '../../utils/images';
 import { useValues } from '../../utils/context';
 import { appColors } from '../../themes';
+import { CloseIcon } from '../../assets/icons/closeIcon';
 
 interface UpdateRequiredModalProps {
     visible: boolean;
     onUpdate?: () => void;
+    onDismiss: () => void;
 }
 
-export const UpdateRequiredModal: React.FC<UpdateRequiredModalProps> = ({ visible, onUpdate }) => {
+export const UpdateRequiredModal: React.FC<UpdateRequiredModalProps> = ({ visible, onUpdate, onDismiss }) => {
     const { isDark } = useValues();
 
     return (
@@ -19,10 +21,20 @@ export const UpdateRequiredModal: React.FC<UpdateRequiredModalProps> = ({ visibl
             visible={visible}
             animationType="fade"
             statusBarTranslucent={true}
+            onRequestClose={onDismiss}
         >
             <StatusBar backgroundColor="rgba(0,0,0,0.6)" barStyle="light-content" />
             <View style={styles.modalBackground}>
                 <View style={[styles.modalContainer, { backgroundColor: isDark ? appColors.darkHeader : appColors.whiteColor }]}>
+                    <TouchableOpacity
+                        accessibilityRole="button"
+                        accessibilityLabel="Update later"
+                        style={styles.closeButton}
+                        onPress={onDismiss}
+                        activeOpacity={0.7}
+                    >
+                        <CloseIcon fill={isDark ? appColors.whiteColor : appColors.primaryText} />
+                    </TouchableOpacity>
                     <View style={[styles.imageContainer, { backgroundColor: isDark ? appColors.darkPrimary : appColors.lightGreen }]}>
                         <Image
                             source={Images.rydapLogo}
