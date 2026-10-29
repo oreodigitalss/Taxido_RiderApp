@@ -1,0 +1,30 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+const setValue = async (key: string, value: any) => {
+  if (value === null || value === undefined) {
+    console.warn(`[AsyncStorage] Skipping setItem for key "${key}" because value is ${value}`);
+    return;
+  }
+  const item = await AsyncStorage.setItem(key, value);
+  return item;
+};
+
+const getValue = async (val: string) => {
+  const item = await AsyncStorage.getItem(val);
+  return item;
+};
+
+const deleteValue = async (val: string) => {
+  var item = await AsyncStorage.removeItem(val);
+  return item;
+};
+
+const clearValue = async (key?: string) => {
+  if (key) {
+    await AsyncStorage.removeItem(key);
+  } else {
+    await AsyncStorage.clear();
+  }
+};
+
+export { setValue, getValue, deleteValue, clearValue };

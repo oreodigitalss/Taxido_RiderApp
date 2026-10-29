@@ -1,0 +1,153 @@
+apply plugin: "com.android.application"
+apply plugin: "org.jetbrains.kotlin.android"
+apply plugin: "com.facebook.react"
+apply plugin: 'com.google.gms.google-services'
+
+react {
+    autolinkLibrariesWithApp()
+}
+
+
+
+def supportedAbis = (project.findProperty("reactNativeArchitectures") ?: "armeabi-v7a,arm64-v8a,x86,x86_64").split(",")
+
+def enableProguardInReleaseBuilds = false
+def jscFlavor = 'io.github.react-native-community:jsc-android:2026004.+'
+
+project.ext.react = [
+ hermesEnabled: true
+]
+
+android {
+    ndkVersion rootProject.ext.ndkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    compileSdk rootProject.ext.compileSdkVersion
+
+    namespace "com.taxidouser.webiots"
+    defaultConfig {
+       applicationId "com.rydap.com"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0.0"
+        multiDexEnabled true
+        externalNativeBuild {
+            cmake {
+                arguments "-DCMAKE_OBJECT_PATH_MAX=90"
+            }
+        }
+    }
+    signingConfigs {
+        debug {
+            storeFile file('debug.keystore')
+            storePassword 'android'
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+        }
+    }
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+            manifestPlaceholders = [usesCleartextTraffic: "true"]
+        }
+        release {
+        signingConfig signingConfigs.debug
+        minifyEnabled false
+        shrinkResources false
+        manifestPlaceholders = [usesCleartextTraffic: "true"]
+        }
+    }
+
+    splits {
+        abi {
+            reset()
+            enable true
+            universalApk false
+            include(*supportedAbis)
+        }
+    }
+
+    // Workaround for Windows file path length limits
+    externalNativeBuild {
+        cmake {
+            buildStagingDirectory "C:/cxx/${rootProject.name}/${project.name}"
+        }
+    }
+}
+
+dependencies {
+    implementation("com.facebook.react:react-android")
+    implementation "androidx.multidex:multidex:2.0.1"
+    implementation 'com.google.android.gms:play-services-auth:20.7.0'
+
+    if (hermesEnabled.toBoolean()) {
+        implementation("com.facebook.react:hermes-android")
+    } else {
+        implementation jscFlavor
+    }
+}
+
+gradle.projectsEvaluated {
+    def fixAutolinkingCmakeDirs = {
+        def autolinkingDir = layout.buildDirectory.dir("generated/autolinking/src/main/jni").get().asFile
+        if (autolinkingDir.exists()) {
+            fileTree(autolinkingDir).matching { include "*.cmake" }.each { cmakeFile ->
+                def newLines = []
+                def changed = false
+                cmakeFile.eachLine { line ->
+                    def matcher = line =~ /add_subdirectory\s*\(\s*"([^"]+)"\s+([^\s\)]+)\)/
+                    if (matcher.find()) {
+                        def dirPath = matcher.group(1)
+                        def buildName = matcher.group(2)
+                        def dir = new File(dirPath)
+                        if (!dir.exists()) {
+                            dir.mkdirs()
+                        }
+                        def cmakeListFile = new File(dir, "CMakeLists.txt")
+                        if (!cmakeListFile.exists()) {
+                            def libTarget = "react_codegen_" + buildName.replaceAll(/_autolinked_build$/, "")
+                            cmakeListFile.text = "cmake_minimum_required(VERSION 3.13)\nif(NOT TARGET ${libTarget})\n  add_library(${libTarget} INTERFACE)\nendif()\n"
+                        }
+                        
+                        // Fix for Windows long path issues in CMake
+                        def projectRootPath = rootProject.rootDir.parentFile.absolutePath.replace('\\\\', '/')
+                        if (dirPath.startsWith(projectRootPath)) {
+                            def relativePath = dirPath.substring(projectRootPath.length())
+                            if (relativePath.startsWith("/")) {
+                                relativePath = relativePath.substring(1)
+                            }
+                            def newDirPath = "\${CMAKE_CURRENT_LIST_DIR}/../../../../../../../../" + relativePath
+                            line = line.replace(dirPath, newDirPath)
+                            changed = true
+                        }
+                    }
+                    newLines << line
+                }
+                if (changed) {
+                    cmakeFile.text = newLines.join('\n')
+                }
+            }
+        }
+    }
+
+    fixAutolinkingCmakeDirs()
+
+    tasks.matching { it.name.startsWith("configureCMake") || it.name.startsWith("buildCMake") || it.name.startsWith("externalNativeBuild") }.configureEach { cmakeTask ->
+        rootProject.subprojects { subproject ->
+            if (subproject != project) {
+                cmakeTask.dependsOn(subproject.tasks.matching {
+                    it.name.contains("Codegen") || it.name.contains("codegen") || it.name.contains("prefab") || it.name.contains("Prefab") || it.name.contains("externalNativeBuild") || it.name.contains("CMake")
+                })
+            }
+        }
+        cmakeTask.doFirst {
+            fixAutolinkingCmakeDirs()
+        }
+    }
+}
+
+
+
+
+
+

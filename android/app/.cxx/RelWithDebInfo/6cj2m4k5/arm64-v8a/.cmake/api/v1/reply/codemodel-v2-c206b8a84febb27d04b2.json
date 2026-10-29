@@ -1,0 +1,638 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23
+					],
+					"jsonFile" : "directory-.-RelWithDebInfo-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "rnasyncstorage_autolinked_build",
+					"jsonFile" : "directory-rnasyncstorage_autolinked_build-RelWithDebInfo-31a07ed75ff497d6b7f4.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "D:/oreodigitalss-project/Taxido_NativeApp/Taxido_user/node_modules/@react-native-async-storage/async-storage/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						14
+					]
+				},
+				{
+					"build" : "rncameraroll_autolinked_build",
+					"jsonFile" : "directory-rncameraroll_autolinked_build-RelWithDebInfo-ef53ebcceb9233a8050a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "D:/oreodigitalss-project/Taxido_NativeApp/Taxido_user/node_modules/@react-native-camera-roll/camera-roll/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						15
+					]
+				},
+				{
+					"build" : "rnclipboard_autolinked_build",
+					"jsonFile" : "directory-rnclipboard_autolinked_build-RelWithDebInfo-4aec210524e815145a73.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "D:/oreodigitalss-project/Taxido_NativeApp/Taxido_user/node_modules/@react-native-clipboard/clipboard/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						16
+					]
+				},
+				{
+					"build" : "RNCGeolocationSpec_autolinked_build",
+					"jsonFile" : "directory-RNCGeolocationSpec_autolinked_build-RelWithDebInfo-fe6b96106eabc1388347.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "D:/oreodigitalss-project/Taxido_NativeApp/Taxido_user/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "RNCNetInfoSpec_autolinked_build",
+					"jsonFile" : "directory-RNCNetInfoSpec_autolinked_build-RelWithDebInfo-b88e2f51407045285b7f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "D:/oreodigitalss-project/Taxido_NativeApp/Taxido_user/node_modules/@react-native-community/netinfo/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "rndocumentpickerCGen_autolinked_build",
+					"jsonFile" : "directory-rndocumentpickerCGen_autolinked_build-RelWithDebInfo-7209253b91e0efa25b3e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "D:/oreodigitalss-project/Taxido_NativeApp/Taxido_user/node_modules/@react-native-documents/picker/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						17
+					]
+				},
+				{
+					"build" : "RNGoogleSignInCGen_autolinked_build",
+					"jsonFile" : "directory-RNGoogleSignInCGen_autolinked_build-RelWithDebInfo-3ed771738bae095af568.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "D:/oreodigitalss-project/Taxido_NativeApp/Taxido_user/node_modules/@react-native-google-signin/google-signin/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						7
+					]
+				},
+				{
+					"build" : "lottiereactnative_autolinked_build",
+					"jsonFile" : "directory-lottiereactnative_autolinked_build-RelWithDebInfo-a119762c320d8f379ee8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "D:/oreodigitalss-project/Taxido_NativeApp/Taxido_user/node_modules/lottie-react-native/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						13
+					]
+				},
+				{
+					"build" : "AndroidLocationEnablerSpec_autolinked_build",
+					"jsonFile" : "directory-AndroidLocationEnablerSpec_autolinked_build-RelWithDebInfo-f3fae3cd550c6398a32d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "D:/oreodigitalss-project/Taxido_NativeApp/Taxido_user/node_modules/react-native-android-location-enabler/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "ReactNativeBlobUtilSpec_autolinked_build",
+					"jsonFile" : "directory-ReactNativeBlobUtilSpec_autolinked_build-RelWithDebInfo-2ac18429be97b3c01217.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "D:/oreodigitalss-project/Taxido_NativeApp/Taxido_user/node_modules/react-native-blob-util/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						12
+					]
+				},
+				{
+					"build" : "RNContactsSpec_autolinked_build",
+					"jsonFile" : "directory-RNContactsSpec_autolinked_build-RelWithDebInfo-203966c75b8890e9ed1f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "D:/oreodigitalss-project/Taxido_NativeApp/Taxido_user/node_modules/react-native-contacts/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "rngesturehandler_codegen_autolinked_build",
+					"jsonFile" : "directory-rngesturehandler_codegen_autolinked_build-RelWithDebInfo-ac888f432e8338097c23.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "D:/oreodigitalss-project/Taxido_NativeApp/Taxido_user/node_modules/react-native-gesture-handler/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						18
+					]
+				},
+				{
+					"build" : "RNGoogleMobileAdsSpec_autolinked_build",
+					"jsonFile" : "directory-RNGoogleMobileAdsSpec_autolinked_build-RelWithDebInfo-c17f47a4b71301ea2200.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "D:/oreodigitalss-project/Taxido_NativeApp/Taxido_user/node_modules/react-native-google-mobile-ads/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"build" : "RNImagePickerSpec_autolinked_build",
+					"jsonFile" : "directory-RNImagePickerSpec_autolinked_build-RelWithDebInfo-dd923a606030f8bcf810.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "D:/oreodigitalss-project/Taxido_NativeApp/Taxido_user/node_modules/react-native-image-picker/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						8
+					]
+				},
+				{
+					"build" : "RNMapsSpecs_autolinked_build",
+					"jsonFile" : "directory-RNMapsSpecs_autolinked_build-RelWithDebInfo-6d60f5b2bed827bc2c7d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "D:/oreodigitalss-project/Taxido_NativeApp/Taxido_user/node_modules/react-native-maps/android/src/main/jni",
+					"targetIndexes" : 
+					[
+						9
+					]
+				},
+				{
+					"build" : "RNPermissionsSpec_autolinked_build",
+					"jsonFile" : "directory-RNPermissionsSpec_autolinked_build-RelWithDebInfo-acb710694a3e0a03417d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "D:/oreodigitalss-project/Taxido_NativeApp/Taxido_user/node_modules/react-native-permissions/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						10
+					]
+				},
+				{
+					"build" : "rnreanimated_autolinked_build",
+					"jsonFile" : "directory-rnreanimated_autolinked_build-RelWithDebInfo-a8f6c5cc65e4a55afb93.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "D:/oreodigitalss-project/Taxido_NativeApp/Taxido_user/node_modules/react-native-reanimated/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						19
+					]
+				},
+				{
+					"build" : "safeareacontext_autolinked_build",
+					"jsonFile" : "directory-safeareacontext_autolinked_build-RelWithDebInfo-b742dabdce7f8ab7cbbe.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "D:/oreodigitalss-project/Taxido_NativeApp/Taxido_user/node_modules/react-native-safe-area-context/android/src/main/jni",
+					"targetIndexes" : 
+					[
+						23
+					]
+				},
+				{
+					"build" : "rnscreens_autolinked_build",
+					"jsonFile" : "directory-rnscreens_autolinked_build-RelWithDebInfo-5a2a3a83060e7cf3fcad.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "D:/oreodigitalss-project/Taxido_NativeApp/Taxido_user/node_modules/react-native-screens/android/src/main/jni",
+					"targetIndexes" : 
+					[
+						20
+					]
+				},
+				{
+					"build" : "RNShareSpec_autolinked_build",
+					"jsonFile" : "directory-RNShareSpec_autolinked_build-RelWithDebInfo-ba93bf7ab04cc2e04431.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "D:/oreodigitalss-project/Taxido_NativeApp/Taxido_user/node_modules/react-native-share/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						11
+					]
+				},
+				{
+					"build" : "rnsvg_autolinked_build",
+					"jsonFile" : "directory-rnsvg_autolinked_build-RelWithDebInfo-84702cb0381dfc773d19.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "D:/oreodigitalss-project/Taxido_NativeApp/Taxido_user/node_modules/react-native-svg/android/src/main/jni",
+					"targetIndexes" : 
+					[
+						21
+					]
+				},
+				{
+					"build" : "RNCWebViewSpec_autolinked_build",
+					"jsonFile" : "directory-RNCWebViewSpec_autolinked_build-RelWithDebInfo-05e9dead813df0f21467.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "D:/oreodigitalss-project/Taxido_NativeApp/Taxido_user/node_modules/react-native-webview/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "rnworklets_autolinked_build",
+					"jsonFile" : "directory-rnworklets_autolinked_build-RelWithDebInfo-4ee965446160bac6f5a0.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "D:/oreodigitalss-project/Taxido_NativeApp/Taxido_user/node_modules/react-native-worklets/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						22
+					]
+				}
+			],
+			"name" : "RelWithDebInfo",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23
+					],
+					"name" : "appmodules",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "appmodules::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appmodules-RelWithDebInfo-a35b78280613d838f3dc.json",
+					"name" : "appmodules",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "react_codegen_AndroidLocationEnablerSpec::@56da1ed2770beb09b300",
+					"jsonFile" : "target-react_codegen_AndroidLocationEnablerSpec-RelWithDebInfo-93f66f181df3b9a5774a.json",
+					"name" : "react_codegen_AndroidLocationEnablerSpec",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "react_codegen_RNCGeolocationSpec::@1b959fcb56e23f7716ba",
+					"jsonFile" : "target-react_codegen_RNCGeolocationSpec-RelWithDebInfo-4afd000ca08f0a4f208f.json",
+					"name" : "react_codegen_RNCGeolocationSpec",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "react_codegen_RNCNetInfoSpec::@c36c96bfd5b5770618a5",
+					"jsonFile" : "target-react_codegen_RNCNetInfoSpec-RelWithDebInfo-076827f6f747b8d688be.json",
+					"name" : "react_codegen_RNCNetInfoSpec",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 22,
+					"id" : "react_codegen_RNCWebViewSpec::@eb48929f9f7453740a6c",
+					"jsonFile" : "target-react_codegen_RNCWebViewSpec-RelWithDebInfo-54a92bebc899c862f8a9.json",
+					"name" : "react_codegen_RNCWebViewSpec",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 11,
+					"id" : "react_codegen_RNContactsSpec::@f22bb5a2f7260e3ff95a",
+					"jsonFile" : "target-react_codegen_RNContactsSpec-RelWithDebInfo-dc44a2dd484f1841d0a1.json",
+					"name" : "react_codegen_RNContactsSpec",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 13,
+					"id" : "react_codegen_RNGoogleMobileAdsSpec::@c00c605517d10bc7886c",
+					"jsonFile" : "target-react_codegen_RNGoogleMobileAdsSpec-RelWithDebInfo-929a31d7096a6a01ba1e.json",
+					"name" : "react_codegen_RNGoogleMobileAdsSpec",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "react_codegen_RNGoogleSignInCGen::@337b7b353bd94a4215c0",
+					"jsonFile" : "target-react_codegen_RNGoogleSignInCGen-RelWithDebInfo-323f3596e1e5efce19f3.json",
+					"name" : "react_codegen_RNGoogleSignInCGen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 14,
+					"id" : "react_codegen_RNImagePickerSpec::@f66ee9a2efecfb28bee4",
+					"jsonFile" : "target-react_codegen_RNImagePickerSpec-RelWithDebInfo-2a99cf8c15297fbe1e77.json",
+					"name" : "react_codegen_RNImagePickerSpec",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 15,
+					"id" : "react_codegen_RNMapsSpecs::@5748abef1962d24942ec",
+					"jsonFile" : "target-react_codegen_RNMapsSpecs-RelWithDebInfo-a5c42078d728c980dc12.json",
+					"name" : "react_codegen_RNMapsSpecs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 16,
+					"id" : "react_codegen_RNPermissionsSpec::@7ad697819b753921c957",
+					"jsonFile" : "target-react_codegen_RNPermissionsSpec-RelWithDebInfo-b0ef942aafc3b05702f6.json",
+					"name" : "react_codegen_RNPermissionsSpec",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 20,
+					"id" : "react_codegen_RNShareSpec::@e6c4c2b5aedb2ea213b7",
+					"jsonFile" : "target-react_codegen_RNShareSpec-RelWithDebInfo-a92706d9e1ce07c41efb.json",
+					"name" : "react_codegen_RNShareSpec",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "react_codegen_ReactNativeBlobUtilSpec::@7d3cc6108106e04bb830",
+					"jsonFile" : "target-react_codegen_ReactNativeBlobUtilSpec-RelWithDebInfo-1d85f2fb8a5127e3050f.json",
+					"name" : "react_codegen_ReactNativeBlobUtilSpec",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "react_codegen_lottiereactnative::@0fa4dc904d7e359a99fb",
+					"jsonFile" : "target-react_codegen_lottiereactnative-RelWithDebInfo-9afc6f43551ba0b825dd.json",
+					"name" : "react_codegen_lottiereactnative",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "react_codegen_rnasyncstorage::@1596841e19ec5b9eeffe",
+					"jsonFile" : "target-react_codegen_rnasyncstorage-RelWithDebInfo-04c1d30cb4035badd276.json",
+					"name" : "react_codegen_rnasyncstorage",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "react_codegen_rncameraroll::@60139d220751b3dabc04",
+					"jsonFile" : "target-react_codegen_rncameraroll-RelWithDebInfo-23cadef29320b928cc05.json",
+					"name" : "react_codegen_rncameraroll",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "react_codegen_rnclipboard::@6385240493dfcaf22ab7",
+					"jsonFile" : "target-react_codegen_rnclipboard-RelWithDebInfo-81a7dd7e52a49a6d7cea.json",
+					"name" : "react_codegen_rnclipboard",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "react_codegen_rndocumentpickerCGen::@aac1846a245ca418eb66",
+					"jsonFile" : "target-react_codegen_rndocumentpickerCGen-RelWithDebInfo-4ec92eb1d59eff789b3d.json",
+					"name" : "react_codegen_rndocumentpickerCGen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 12,
+					"id" : "react_codegen_rngesturehandler_codegen::@39f233abcd2c728bc6ec",
+					"jsonFile" : "target-react_codegen_rngesturehandler_codegen-RelWithDebInfo-8024d192ccfd368ab091.json",
+					"name" : "react_codegen_rngesturehandler_codegen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 17,
+					"id" : "react_codegen_rnreanimated::@8afabad14bfffa3f8b9a",
+					"jsonFile" : "target-react_codegen_rnreanimated-RelWithDebInfo-31bfd18bf9361d524dff.json",
+					"name" : "react_codegen_rnreanimated",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 19,
+					"id" : "react_codegen_rnscreens::@25bcbd507e98d3a854ad",
+					"jsonFile" : "target-react_codegen_rnscreens-RelWithDebInfo-f9a5cb891f5639eac48e.json",
+					"name" : "react_codegen_rnscreens",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 21,
+					"id" : "react_codegen_rnsvg::@4f40eb209d0c0b4a3b65",
+					"jsonFile" : "target-react_codegen_rnsvg-RelWithDebInfo-8186ed9682b1d1112062.json",
+					"name" : "react_codegen_rnsvg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 23,
+					"id" : "react_codegen_rnworklets::@68f58d84d4754f193387",
+					"jsonFile" : "target-react_codegen_rnworklets-RelWithDebInfo-fa7abf8868458de039ce.json",
+					"name" : "react_codegen_rnworklets",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 18,
+					"id" : "react_codegen_safeareacontext::@7984cd80db47aa7b952a",
+					"jsonFile" : "target-react_codegen_safeareacontext-RelWithDebInfo-269cd8ff09e678c37cbf.json",
+					"name" : "react_codegen_safeareacontext",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/oreodigitalss-project/Taxido_NativeApp/Taxido_user/android/app/.cxx/RelWithDebInfo/6cj2m4k5/arm64-v8a",
+		"source" : "D:/oreodigitalss-project/Taxido_NativeApp/Taxido_user/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

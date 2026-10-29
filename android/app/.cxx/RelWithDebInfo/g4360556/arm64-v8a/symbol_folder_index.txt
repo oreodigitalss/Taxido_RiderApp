@@ -1,0 +1,1 @@
+D:\oreodigitalss-project\Taxido_NativeApp\Taxido_user\android\app\build\intermediates\cxx\RelWithDebInfo\g4360556\obj\arm64-v8a

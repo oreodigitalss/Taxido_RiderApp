@@ -1,0 +1,54 @@
+buildscript {
+    ext {
+        buildToolsVersion = "36.0.0"
+        minSdkVersion = 24
+        compileSdkVersion = 36
+        targetSdkVersion = 36
+        ndkVersion = "27.1.12297006"
+        kotlinVersion = "2.1.20"
+    }
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            url("$rootDir/../node_modules/react-native/android")
+        }
+
+    }
+    dependencies {
+        classpath("com.android.tools.build:gradle:8.2.0") 
+        classpath("com.facebook.react:react-native-gradle-plugin")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:2.1.20") 
+        classpath("com.google.gms:google-services:4.3.15")
+        classpath 'com.google.gms:google-services:4.3.8'
+    }
+}
+
+apply plugin: "com.facebook.react.rootproject"
+
+// Native modules must use the Android plugin already loaded by the app.
+// Some dependencies declare newer standalone-build plugins in their own scripts.
+def appAndroidPluginVersion = com.android.Version.ANDROID_GRADLE_PLUGIN_VERSION
+subprojects { nativeModule ->
+    nativeModule.buildscript.repositories {
+        mavenCentral()
+        google()
+    }
+    nativeModule.buildscript.configurations.configureEach {
+        resolutionStrategy.eachDependency { dependency ->
+            if (dependency.requested.group == "com.android.tools.build" &&
+                dependency.requested.name == "gradle") {
+                dependency.useVersion(appAndroidPluginVersion)
+                dependency.because("Align native modules with the app Android Gradle plugin")
+            }
+        }
+    }
+}
+
+allprojects {
+    repositories {
+        maven {
+            url "$rootDir/../node_modules/@notifee/react-native/android/libs"
+        }
+    }
+}
