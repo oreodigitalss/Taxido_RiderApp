@@ -15,6 +15,7 @@ export const styles = StyleSheet.create({
         backgroundColor: appColors.whiteColor,
         borderRadius: windowWidth(20),
         padding: windowWidth(25),
+        position: 'relative',
         alignItems: 'center',
         shadowColor: "#000",
         shadowOffset: {
@@ -24,6 +25,17 @@ export const styles = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
         elevation: 5,
+    },
+    closeButton: {
+        position: 'absolute',
+        top: windowHeight(12),
+        right: windowWidth(12),
+        width: windowWidth(36),
+        height: windowWidth(36),
+        borderRadius: windowWidth(18),
+        alignItems: 'center',
+        justifyContent: 'center',
+        zIndex: 1,
     },
     imageContainer: {
         width: windowWidth(70),

@@ -70,7 +70,9 @@ android {
     // Workaround for Windows file path length limits
     externalNativeBuild {
         cmake {
-            buildStagingDirectory "C:/cxx/${rootProject.name}/${project.name}"
+            // Keep this outside the project but version the path so stale CMake
+            // metadata from older React Native/autolinking workarounds is not reused.
+            buildStagingDirectory "C:/cxx/${rootProject.name}/${project.name}-rn82"
         }
     }
 }
@@ -104,9 +106,15 @@ gradle.projectsEvaluated {
                             dir.mkdirs()
                         }
                         def cmakeListFile = new File(dir, "CMakeLists.txt")
-                        if (!cmakeListFile.exists()) {
-                            def libTarget = "react_codegen_" + buildName.replaceAll(/_autolinked_build$/, "")
-                            cmakeListFile.text = "cmake_minimum_required(VERSION 3.13)\nif(NOT TARGET ${libTarget})\n  add_library(${libTarget} INTERFACE)\nendif()\n"
+                        def libTarget = "react_codegen_" + buildName.replaceAll(/_autolinked_build$/, "")
+                        if (!cmakeListFile.exists() || cmakeListFile.getText('UTF-8').contains('add_library(' + libTarget + ' INTERFACE)')) {
+                            // Some older libraries advertise codegen but do not generate
+                            // their JNI sources. RN 0.82 links every autolinked target with
+                            // the normal signature, so an INTERFACE target is invalid here.
+                            // Create a harmless static placeholder instead.
+                            def placeholderSource = new File(dir, "react_codegen_placeholder.cpp")
+                            placeholderSource.text = "// Placeholder for a library without generated JNI code.\n"
+                            cmakeListFile.text = "cmake_minimum_required(VERSION 3.13)\nif(NOT TARGET ${libTarget})\n  add_library(${libTarget} STATIC react_codegen_placeholder.cpp)\nendif()\n"
                         }
                         
                         // Fix for Windows long path issues in CMake
