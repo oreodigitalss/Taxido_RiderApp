@@ -3,11 +3,12 @@ import { getValue } from './localstorage';
 import { URL as API_URL } from '@src/api/config';
 
 // @ts-ignore
-const PusherClient = require('pusher-js/react-native').Pusher || require('pusher-js/react-native');
+const PusherClient =
+  require('pusher-js/react-native').Pusher ||
+  require('pusher-js/react-native');
 
-PusherClient.logToConsole = true;
+PusherClient.logToConsole = __DEV__;
 
-// Laravel Echo expects Pusher on window globally in React Native
 // @ts-ignore
 window.Pusher = PusherClient;
 
@@ -25,7 +26,7 @@ const getEchoInstance = async () => {
     try {
       echoInstance.disconnect();
     } catch (e) {
-      console.error("Error disconnecting stale Echo instance:", e);
+      console.error('Error disconnecting stale Echo instance:', e);
     }
   }
 
@@ -33,13 +34,10 @@ const getEchoInstance = async () => {
 
   echoInstance = new Echo({
     broadcaster: 'pusher',
-    key: 'yrtdtapyoopzf7p46ved',
-    wsHost: 'rydap.com',
-    wsPort: 443,
-    wssPort: 443,
+    key: '32b114c5d9838fa6aa28',
+    cluster: 'ap2',
     forceTLS: true,
     disableStats: true,
-    cluster: 'mt1',
     enabledTransports: ['ws', 'wss'],
     Pusher: PusherClient,
     authEndpoint: `${API_URL}/api/broadcasting/auth`,
@@ -50,7 +48,6 @@ const getEchoInstance = async () => {
       },
     },
   });
-
 
   return echoInstance;
 };
